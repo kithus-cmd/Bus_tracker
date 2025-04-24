@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bus Tracker Prototype</title>
+    <style type="text/css">
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0056b3;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0056b3;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        footer {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .highlight {
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+    <script type="text/javascript">
+        function showInfo() {
+            var input = document.getElementById("busInput").value;
+            var display = document.getElementById("busInfo");
+            if (input === "45") {
+                display.innerHTML = "<span class='highlight'>Bus #45</span> is 5 minutes away from your stop.";
+            } else if (input) {
+                display.innerHTML = "Information for bus #" + input + " is not available in the prototype.";
+            } else {
+                display.innerHTML = "Please enter a bus number.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Real-Time Bus Tracking System</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Live Bus Map (Mock)</h2>
+            <p>This section would show a map with real-time GPS data of buses. (Map integration coming soon...)</p>
+        </section>
+        <section>
+            <h2>Search for a Bus</h2>
+            <input type="text" id="busInput" placeholder="Enter Bus Number or Route" onkeyup="showInfo()" />
+        </section>
+        <section>
+            <h2>Upcoming Bus Info</h2>
+            <p id="busInfo">Enter a bus number to see ETA and location.</p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2025 Bus Tracker App - XHTML Prototype
+    </footer>
+</body>
+</html>
